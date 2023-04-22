@@ -1,0 +1,18 @@
+---
+interface Props {
+    texto:String
+}
+const {texto} = Astro.props
+---
+<button class="button" >
+ {texto}
+</button>
+<script>
+    const alerta=()=>{
+        console.log()
+    }
+    const btn = document.querySelector(".button") as HTMLButtonElement
+    btn.addEventListener("click",()=>{
+        alerta()
+    })
+</script>
