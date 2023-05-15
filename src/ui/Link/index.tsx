@@ -1,7 +1,8 @@
+import style from "./style.module.css"
 interface link {
   text: string;
 }
-function Link({ text }: link) {
-  return <a href={`#${text}`}>{text.toLocaleUpperCase()}</a>;
+function Linker({ text }: link) {
+  return <a href={`#${text}`} className={`${style.link} hvr-underline-from-left`}>{text.toUpperCase()}</a>;
 }
-export { Link };
+export { Linker };

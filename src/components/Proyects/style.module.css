@@ -1,0 +1,28 @@
+.container{
+    text-align: center;
+}
+.container span{
+    width: 10px;
+    height: 2px;
+    background-color: #FACF0F;
+}
+.container span::after{
+    content: '';
+    position: absolute;
+    top: calc(100% + 5.5rem);
+    height: 5px;
+    width: 3rem;
+    background: #facf0f;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+.text{
+    margin-top: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

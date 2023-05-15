@@ -1,0 +1,15 @@
+.skill{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 15px;
+    margin: 20px;
+    background-color: #385170;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.skill p{
+    font-size: 16px;
+    color: #fff;
+}

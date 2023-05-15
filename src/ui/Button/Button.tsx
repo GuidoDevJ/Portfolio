@@ -1,9 +1,7 @@
 import style from "./style.module.css";
-interface Btn {
-  text: String;
-}
 
-function Buttone({ children }: any) {
+
+function Button({ children }: any) {
   function hola() {
     console.log("Hola");
   }
@@ -14,4 +12,4 @@ function Buttone({ children }: any) {
   );
 }
 
-export { Buttone };
+export { Button};

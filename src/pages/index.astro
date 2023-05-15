@@ -1,6 +1,11 @@
 ---
-import { Buttone } from "../ui/Button/Button";
-import { Link } from "src/ui/Link";
+import { Title, Text } from "src/ui/text";
+import { Button } from "../ui/Button/Button";
+import { Header } from "src/components/Header/Header";
+import { Hero } from "src/components/Hero/Hero";
+import { Skill } from "src/ui/Skill-Button";
+import { AboutMe } from "src/components/About-Me/About-Me";
+import { Proyect } from "src/components/Proyects/Proyect";
 ---
 
 <html lang="en">
@@ -9,26 +14,36 @@ import { Link } from "src/ui/Link";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/hover.css" />
+	<link rel="stylesheet" href="../../css/index.css">
     <title>Astro</title>
   </head>
   <body>
-    <!-- <Buttone client:load>Proyectos</Buttone> -->
-	<div class="div-1">
-		<Link text="style"/>
-	</div>
-	<div class="div-1"></div>
-	<div class="div-1"></div>
-	<div class="div-1 style" id="style"></div>
+		<header class="header">
+      <Header client:only/>
+      <Hero/>
+    </header>
+    <main class="main">
+      <AboutMe/>
+      <Proyect/>
+      <br><br><br><br><br><br><br><br><br><br>
+    </main>
   </body>
 </html>
 <style>
-	.div-1{
-		height: 100vh;
-	}
-	.style{
-		background-color: brown;
-	}
+  .header{
+    width: 100%;
+    height: 100vh;
+  }
+  .main{
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
 </style>

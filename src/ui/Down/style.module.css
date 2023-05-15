@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.down{
+    animation: myAnim 2s ease-in-out infinite normal;
+}
+.down:nth-child(2){
+    margin-top: -40px;
+}
+
+@keyframes myAnim {
+	0%{
+        transform: translateY(-15px);
+    }
+    50%{
+        transform: translateY(-7.5px);
+    }
+    75%{
+        transform: translateY(-3px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
