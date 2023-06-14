@@ -9,7 +9,6 @@
 .container span::after{
     content: '';
     position: absolute;
-    /* top: calc(100% + 5.5rem); */
     height: 5px;
     width: 3rem;
     background: #facf0f;
@@ -26,3 +25,8 @@
     align-items: center;
 }
 
+.formContainer{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}

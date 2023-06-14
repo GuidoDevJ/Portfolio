@@ -6,6 +6,7 @@ import { Hero } from "src/components/Hero/Hero";
 import { Skill } from "src/ui/Skill-Button";
 import { AboutMe } from "src/components/About-Me/About-Me";
 import { Proyect } from "src/components/Proyects/Proyect";
+import { Contact} from "src/components/Contact/Contact"
 ---
 
 <html lang="en">
@@ -21,29 +22,29 @@ import { Proyect } from "src/components/Proyects/Proyect";
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/hover.css" />
-	<link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../public/css/index.css" />
     <title>Astro</title>
   </head>
   <body>
-		<header class="header">
-      <Header client:only/>
-      <Hero/>
+    <header class="header">
+      <Header client:only />
+      <Hero />
     </header>
     <main class="main">
-      <AboutMe/>
-      <Proyect/>
-      <br><br><br><br><br><br><br><br><br><br>
+      <AboutMe />
+      <Proyect />
+      <Contact/>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </main>
   </body>
 </html>
 <style>
-  .header{
+  .header {
     width: 100%;
     height: 100vh;
   }
-  .main{
-    width: 100vw;
+  .main {
+    width: 100%;
     overflow-x: hidden;
   }
-
 </style>

@@ -46,6 +46,9 @@
 }
 .skillContainer{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .aboutMe p{
     text-align: left;
@@ -56,6 +59,7 @@
 }
 .skills{
     width: 100%;
+    max-width: 550px;
     height: 50%;
     display: flex;
     flex-direction: row;
@@ -67,15 +71,13 @@
 
     .aboutMe{
         grid-template-columns: 1fr;
-        grid-gap: 8rem;
     }
 
     .aboutMeText{
         padding: 15px;
         margin-top: 3rem;
     }
-
-    .skills{
-        margin-top: 50px;
+    .aboutMe button{
+        align-self: center;
     }
 }
