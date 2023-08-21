@@ -1,8 +1,8 @@
-import Burger from "public/images/Burger.svg"
+import Burger from "public/assets/Burger.svg"
 
-const BurgerIcon =({action}:any)=>{
-    return(
-        <img src={Burger} alt="burger" onClick={()=>action()}/>
+const BurgerIcon = ({ action }: any) => {
+    return (
+        <img src={Burger} alt="burger" onClick={() => action()} />
     )
 }
 

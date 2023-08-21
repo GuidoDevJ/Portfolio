@@ -3,16 +3,22 @@ const Form = () => {
     return (
         <>
             <form className={style.form}>
-                <label htmlFor="name">Nombre completo</label>
-                <input id="name" type="text" />
+                <div className={`${style.form_group}`}>
+                    <label htmlFor="name">Nombre completo</label>
+                    <input id="name" type="text" />
+                </div>
 
-                <label htmlFor="mail">Correo electrónico</label>
-                <input id="mail" type="email" />
-
-                <label htmlFor="phone">Teléfono móvil</label>
-                <input id="phone" type="tel" placeholder="+34" />
-
-                <input type="submit" />
+                <div className={`${style.form_group}`}>
+                    <label htmlFor="mail">Correo electrónico</label>
+                    <input id="mail" type="email" />
+                </div>
+                <div className={`${style.form_group}`}>
+                    <label htmlFor="msg">Message</label>
+                    <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+                </div>
+                <div className={`${style.buttonContainer}`}>
+                    <button>Enviar</button>
+                </div>
             </form>
 
         </>

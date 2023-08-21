@@ -1,5 +1,9 @@
 .container{
     text-align: center;
+    background-image: url("../../../public/assets/cool-background.png");
+    background-attachment: fixed;
+    padding: 1.5rem;
+    margin-top: 1rem;
 }
 .container span{
     width: 10px;
@@ -29,4 +33,7 @@
     width: 100%;
     height: auto;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
