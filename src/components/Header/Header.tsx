@@ -4,7 +4,6 @@ import { List } from "../List/index"
 import Logo from "../../public/assets/Logo.svg"
 // Style
 import style from "./style.module.css"
-import { useEffect, useRef, useState } from "react";
 const Header = () => {
   return (
     <div className={style.container}>
