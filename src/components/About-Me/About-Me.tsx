@@ -17,7 +17,7 @@ const AboutMe = () => {
     "Firebase",
   ];
   return (
-    <div className={style.container}>
+    <div className={style.container} id="About">
       <Title>Sobre Mi</Title>
       <span></span>
       <div className={style.text}>

@@ -1,0 +1,25 @@
+.socialContainer {
+  width: 100%;
+  padding: 5px;
+}
+
+.socialUl {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+}
+
+.socialUl li {
+  margin: 0 20px 0 0;
+}
+
+@media (min-width: 600px) {
+  .socialContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .socialContainer h2 {
+    align-self: center !important;
+  }
+}

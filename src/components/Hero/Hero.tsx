@@ -2,7 +2,9 @@ import { Title, Text } from "src/ui/text";
 import style from "./style.module.css";
 import { Button } from "src/ui/Button/Button";
 import { Down } from "src/ui/Down";
+import { Linker } from "src/ui/Link";
 const Hero = () => {
+
   return (
     <div className={style.container}>
       <div className={style.text}>
@@ -11,7 +13,7 @@ const Hero = () => {
           A Frontend focused Web Developer building the Frontend of Websites and
           Web Applications that leads to the success of the overall product
         </Text>
-        <Button>Proyectos</Button>
+        <Button ><Linker text="Proyects"/></Button>
        <Down/>
         
       </div>
