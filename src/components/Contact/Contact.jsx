@@ -4,7 +4,7 @@ import { Form } from "../Form/Form";
 
 const Contact = () => {
     return (
-        <div className={style.container}>
+        <div className={style.container} id="Contact">
             <Title>Contact</Title>
             <span></span>
             <div className={style.formContainer}>

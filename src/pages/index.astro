@@ -8,7 +8,7 @@ import { AboutMe } from "src/components/About-Me/About-Me";
 import { Proyect } from "src/components/Proyects/Proyect";
 import { Contact} from "src/components/Contact/Contact";
 import { Footer } from "src/components/Footer/Footer"
-import "../../public/css/index.css"
+import "../public/css/index.css"
 ---
 
 <html lang="en">
@@ -26,8 +26,8 @@ import "../../public/css/index.css"
   </head>
   <body>
     <header class="header">
-      <Header client:only />
-      <Hero />
+      <Header client:only/>
+      <Hero client:only/>
     </header>
     <main class="main">
       <AboutMe />
@@ -38,6 +38,14 @@ import "../../public/css/index.css"
   </body>
 </html>
 <style>
+  
+  html, body{
+    scroll-behavior: smooth;
+  }
+  html::-webkit-scrollbar {
+    display: none;  /* Ocultar scroll */
+}
+
   .header {
     width: 100%;
     height: 100vh;
