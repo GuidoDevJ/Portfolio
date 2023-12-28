@@ -1,83 +1,89 @@
-.container{
-    text-align: center;
+.container {
+  text-align: center;
 }
-.container span{
-    width: 10px;
-    height: 2px;
-    background-color: #FACF0F;
+.container span {
+  width: 10px;
+  height: 2px;
+  background-color: #facf0f;
 }
-.container span::after{
-    content: '';
-    position: absolute;
-    top: calc(100% + 5.5rem);
-    height: 5px;
-    width: 3rem;
-    background: #facf0f;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
+.container span::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 5.5rem);
+  height: 5px;
+  width: 3rem;
+  background: #facf0f;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
 }
-.text{
-    margin-top: 15px;
+.text {
+  margin-top: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutMe {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 30px;
+  gap: 15px;
+}
+.aboutMe h2 {
+  margin-bottom: 25px;
+}
+
+.aboutMeText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: auto;
+}
+.skillContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aboutMe p {
+  text-align: left;
+  margin-top: 15px;
+}
+.aboutMe button {
+  margin-top: 20px;
+}
+.skills {
+  width: 100%;
+  max-width: 550px;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.aboutMeText a {
+  text-decoration: none;
+  color: black;
+}
+@media (max-width: 720px) {
+  .aboutMe {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutMeText {
     padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.aboutMe{
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 0 30px;
-    gap: 15px;
-}
-.aboutMe h2{
-    margin-bottom: 25px;
-}
-
-.aboutMeText{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    height: auto;
-}
-.skillContainer{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.aboutMe p{
-    text-align: left;
-    margin-top: 15px;
-}
-.aboutMe button{
-    margin-top: 20px;
-}
-.skills{
-    width: 100%;
-    max-width: 550px;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: self-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-@media (max-width:720px){
-
-    .aboutMe{
-        grid-template-columns: 1fr;
-    }
-
-    .aboutMeText{
-        padding: 15px;
-        margin-top: 3rem;
-    }
-    .aboutMe button{
-        align-self: center;
-    }
+    margin-top: 3rem;
+  }
+  .aboutMe button {
+    align-self: center;
+    height: 60px;
+    width: 120px;
+  }
 }

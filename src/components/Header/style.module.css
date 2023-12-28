@@ -4,7 +4,7 @@
   height: 10vh;
   display: flex;
   flex-direction: row;
-  background-color: #f4f4f4;
+  background-color: #d1dae9;
   position: fixed;
   z-index: 99;
 }
@@ -16,4 +16,9 @@
 .containerImg img {
   width: 100px;
   object-fit: cover;
+}
+@media (max-width: 600px) {
+  .container {
+    background-color: transparent;
+  }
 }

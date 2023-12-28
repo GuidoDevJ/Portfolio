@@ -3,8 +3,8 @@ import style from "./style.module.css";
 
 const Proyect = () => {
   return (
-    <div className={style.container}>
-      <Title>Proyectos</Title>
+    <div className={style.container} id="Proyects">
+      <Title>Proyects</Title>
       <span> </span>
       {/* <div className={style.text}>
                     <Text>

@@ -6,11 +6,11 @@ import { Linker } from "src/ui/Link";
 const Hero = () => {
 
   return (
-    <div className={style.container}>
+    <div className={style.container}  id="Home">
       <div className={style.text}>
-        <Title>Hola, me llamo Guido</Title>
+        <Title>Hello, I'm Guido</Title>
         <Text>
-          A Frontend focused Web Developer building the Frontend of Websites and
+          A Software Developer focused on building well performing
           Web Applications that leads to the success of the overall product
         </Text>
         <Button ><Linker text="Proyects"/></Button>

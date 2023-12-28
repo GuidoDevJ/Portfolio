@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-
+// import styled from "styled-components";
 
 function Button({ children, fn }: any) {
   const handleClick=()=>{
@@ -11,5 +11,6 @@ function Button({ children, fn }: any) {
     </button>
   );
 }
+
 
 export { Button };
