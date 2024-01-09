@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         <hr />
         <div className={`${styles.mainFooterDown}`}>
-            <span>Copyright 2023 guido alejandro</span>
+            <span> &#169; Copyright 2024. Do it by GuidoDev</span>
           </div>
       </footer>
     </>

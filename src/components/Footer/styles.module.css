@@ -1,7 +1,9 @@
 .footerContainer {
   width: 100vw;
   height: 50vh;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: #000;
   color: #fff;
 }
@@ -27,6 +29,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mainFooterDown span {
+  font-size: 12px;
+}
+
+.containerTextFooter {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 @media (min-width: 600px) {
