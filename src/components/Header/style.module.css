@@ -1,12 +1,17 @@
 .container {
   position: sticky;
   width: 100%;
-  height: 10vh;
+  height: 8vh;
   display: flex;
   flex-direction: row;
-  background-color: #d1dae9;
+  background-image: linear-gradient(
+    135deg,
+    rgb(245, 247, 250) 0%,
+    #c3cfe2 100%
+  );
   position: fixed;
   z-index: 99;
+  border-bottom: 1px solid #ddd;
 }
 
 .containerImg {

@@ -14,7 +14,11 @@
   width: 100%;
   height: 180px;
   position: absolute;
-  background-color: #f7f7f7;
+  background-image: linear-gradient(
+    135deg,
+    rgb(245, 247, 250) 0%,
+    #c3cfe2 100%
+  );
   bottom: -180px;
   right: 0;
 }
@@ -23,9 +27,4 @@
   justify-content: center;
   width: 100%;
   padding: 15px;
-  border-bottom: solid 2px #ddd;
-}
-
-.listActive a:nth-child(1) {
-  border-top: solid 2px #ddd;
 }

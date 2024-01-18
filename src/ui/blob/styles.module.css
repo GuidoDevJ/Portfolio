@@ -1,0 +1,24 @@
+.container .animated_blob_image {
+  border-radius: 23% 31% 30% 67% / 72% 47% 40% 26%;
+  width: 300px;
+  height: 250px;
+  background: linear-gradient(#a03692, #b46ca8, #c0aec5);
+  overflow: hidden;
+  animation: animateImg 8s linear infinite;
+}
+.container img {
+  width: 100%;
+  height: 100%;
+}
+@keyframes animateImg {
+  0%,
+  100% {
+    border-radius: 69% 31% 30% 67% / 72% 47% 40% 26%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  }
+}
