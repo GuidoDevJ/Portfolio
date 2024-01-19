@@ -9,7 +9,6 @@
     rgb(245, 247, 250) 0%,
     #c3cfe2 100%
   );
-  position: fixed;
   z-index: 99;
   border-bottom: 1px solid #ddd;
 }

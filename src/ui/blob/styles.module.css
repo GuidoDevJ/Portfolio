@@ -1,7 +1,7 @@
 .container .animated_blob_image {
   border-radius: 23% 31% 30% 67% / 72% 47% 40% 26%;
-  width: 300px;
-  height: 250px;
+  width: 250px;
+  height: 220px;
   background: linear-gradient(#a03692, #b46ca8, #c0aec5);
   overflow: hidden;
   animation: animateImg 8s linear infinite;

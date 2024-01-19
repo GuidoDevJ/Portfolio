@@ -1,10 +1,10 @@
-.button{
-    width: 200px;
-    height: 80px;
-    background-color: #FACF0F;
-    font-size: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 700;
-    border: none;
-    border-radius: 6px;
+.button {
+  width: 200px;
+  height: 60px;
+  background-color: #facf0f;
+  font-size: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
 }

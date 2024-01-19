@@ -22,7 +22,8 @@ const AboutMe = () => {
     'GRAPHQL',
     'MICROSERVICES',
     'SCRUM',
-    'ASTRO'
+    'ASTRO',
+    'NEST JS'
   ];
   return (
     <div className={style.container} id="About">
