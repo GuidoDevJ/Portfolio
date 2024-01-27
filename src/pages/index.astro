@@ -10,6 +10,7 @@ import { Contact } from "src/components/Contact/Contact";
 import { Footer } from "src/components/Footer/Footer";
 import "../public/css/index.css";
 import "../public/css/hover.css";
+import { QueryProviderHoc } from "src/layout/react-query-layout";
 ---
 
 <html lang="en">
@@ -43,7 +44,7 @@ import "../public/css/hover.css";
     <main class="main">
       <AboutMe />
       <Proyect />
-      <Contact />
+      <Contact client:only />
     </main>
     <Footer />
   </body>
