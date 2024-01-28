@@ -3,13 +3,16 @@ import { sendEmail } from "../../helpers/index"
 const FormContact = () => {
     const handlerSubmit = async (e:Event)=>{
         e.preventDefault();
+        const form = e.target as HTMLFormElement;
            // Obtener los valores de los campos del formulario
            const name = (document.getElementById("name") as HTMLInputElement).value;
            const email = (document.getElementById("mail") as HTMLInputElement).value;
            const message = (document.getElementById("msg") as HTMLInputElement).value;
-   
+        
+           if(name === "" || email === "" || message === "") return alert("Complete todos los campos")
            // Hacer lo que necesites con los datos (por ejemplo, enviarlos a través de una solicitud HTTP)
           const emailResponse = await sendEmail({name,email,message})
+          form.reset()
     }
     return (
         <>
