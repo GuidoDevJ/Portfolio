@@ -1,0 +1,18 @@
+name: Push to netlify
+on:
+  push:
+    paths-ignore:
+      - ".github/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          yarn
+          yarn build
+          npx netlify-cli deploy --dir=dist --prod

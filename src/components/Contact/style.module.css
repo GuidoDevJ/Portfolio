@@ -1,39 +1,39 @@
-.container{
-    text-align: center;
-    background-image: url("../../../public/assets/cool-background.png");
-    background-attachment: fixed;
-    padding: 1.5rem;
-    margin-top: 1rem;
+.container {
+  text-align: center;
+  background-image: url("../../public/images/fondo-geometrico-moderno-blanco-alto-angulo.jpg");
+  background-attachment: fixed;
+  padding: 1.5rem;
+  margin-top: 1rem;
 }
-.container span{
-    width: 10px;
-    height: 2px;
-    background-color: #FACF0F;
+.container span {
+  width: 10px;
+  height: 2px;
+  background-color: #facf0f;
 }
-.container span::after{
-    content: '';
-    position: absolute;
-    height: 5px;
-    width: 3rem;
-    background: #facf0f;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
+.container span::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 3rem;
+  background: #facf0f;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
 }
-.text{
-    margin-top: 15px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.text {
+  margin-top: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.formContainer{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.formContainer {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

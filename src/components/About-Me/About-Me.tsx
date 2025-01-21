@@ -4,21 +4,30 @@ import { Button } from "src/ui/Button/Button";
 import { Skill } from "src/ui/Skill-Button";
 const AboutMe = () => {
   const skills = [
-    "Hmtl",
-    "css",
-    "javascript",
-    "React",
-    "NextJs",
-    "Express",
-    "Node",
-    "Git",
-    "postgresql",
-    "Bootstrap",
-    "Firebase",
+    "HTML",
+    "CSS",
+    "JAVASCRIPT",
+    "REACT",
+    "NEXTJS",
+    "EXPRESS",
+    "NODE",
+    "GIT",
+    "POSTGRESQL",
+    "FIRABASE",
+    'CI/CD',
+    'AWS',
+    'DOCKER',
+    'NEST',
+    'TESTING',
+    'GRAPHQL',
+    'MICROSERVICES',
+    'SCRUM',
+    'ASTRO',
+    'NEST JS'
   ];
   return (
-    <div className={style.container}>
-      <Title>Sobre Mi</Title>
+    <div className={style.container} id="About">
+      <Title>About Me</Title>
       <span></span>
       <div className={style.text}>
         <Text>
@@ -28,25 +37,22 @@ const AboutMe = () => {
       </div>
       <div className={style.aboutMe}>
         <div className={style.aboutMeText}>
-          <Subtitle>Conoceme un poco mejor</Subtitle>
+          <Subtitle> A little more</Subtitle>
           <TextSecondary>
-            I'm a Frontend Web Developer building the Front-end of Websites and
-            Web Applications that leads to the success of the overall product.
-            Check out some of my work in the Projects section.
+          I'm a software developer, who is always trying to be a little better everyday, 
+          so I really like watching, listening and reading about technologies and their uses.
           </TextSecondary>
           <TextSecondary>
             I also like sharing content related to the stuff that I have learned
             over the years in Web Development so it can help other people of the
             Dev Community. Feel free to Connect or Follow me on my Linkedin
-            where I post useful content related to Web Development and
-            Programming
           </TextSecondary>
           <TextSecondary>
             I'm open to Job opportunities where I can contribute, learn and
             grow. If you have a good opportunity that matches my skills and
             experience then don't hesitate to contact me.
           </TextSecondary>
-          <Button>Contact</Button>
+          <Button><a href="#Contact">Contact</a></Button>
         </div>
         <div className={style.skillContainer}>
           <Subtitle>My Skills</Subtitle>
