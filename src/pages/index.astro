@@ -1,15 +1,13 @@
 ---
-import { Title, Text } from "src/ui/text";
-import { Button } from "../ui/Button/Button";
-import { Header } from "src/components/Header/Header";
-import { Hero } from "src/components/Hero/Hero";
-import { Skill } from "src/ui/Skill-Button";
-import { AboutMe } from "src/components/About-Me/About-Me";
-import { Proyect } from "src/components/Proyects/Proyect";
-import { Contact } from "src/components/Contact/Contact";
-import { Footer } from "src/components/Footer/Footer";
-import "../public/css/index.css";
-import "../public/css/hover.css";
+import { AboutMe } from 'src/components/About-Me/About-Me';
+import { AutoplayCarousel } from 'src/components/Carousel/Container/Container';
+import { Contact } from 'src/components/Contact/Contact';
+import { Footer } from 'src/components/Footer/Footer';
+import { Header } from 'src/components/Header/Header';
+import { Hero } from 'src/components/Hero/Hero';
+import { Proyect } from 'src/components/Proyects/Proyect';
+import '../public/css/hover.css';
+import '../public/css/index.css';
 ---
 
 <html lang="en">
@@ -42,6 +40,7 @@ import "../public/css/hover.css";
     </header>
     <main class="main">
       <AboutMe />
+      <AutoplayCarousel />
       <Proyect />
       <Contact />
     </main>
@@ -52,7 +51,7 @@ import "../public/css/hover.css";
   html,
   body {
     scroll-behavior: smooth;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
   }
   html::-webkit-scrollbar {
     display: none; /* Ocultar scroll */

@@ -5,7 +5,6 @@ const Proyect = () => {
   return (
     <div className={style.container} id="Proyects">
       <Title>Proyects</Title>
-      <span> </span>
       {/* <div className={style.text}>
                     <Text>
                         Here you will find more information about me, what I do, and my

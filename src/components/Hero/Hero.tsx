@@ -1,8 +1,7 @@
-import { Title, Text } from "src/ui/text";
-import style from "./style.module.css";
 import { Button } from "src/ui/Button/Button";
-import { Down } from "src/ui/Down";
 import { Linker } from "src/ui/Link";
+import { Text, Title } from "src/ui/text";
+import style from "./style.module.css";
 const Hero = () => {
 
   return (
@@ -14,7 +13,6 @@ const Hero = () => {
           Web Applications that leads to the success of the overall product
         </Text>
         <Button ><Linker text="Proyects"/></Button>
-       <Down/>
         
       </div>
     </div>
@@ -22,3 +20,4 @@ const Hero = () => {
 };
 
 export { Hero };
+
