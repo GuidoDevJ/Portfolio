@@ -12,8 +12,21 @@
 			"handle": "filesystem"
 		},
 		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/api\\/chat\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/api\\/contact\\/?$",
+			"dest": "_render"
+		},
+		{
 			"src": "/.*",
-			"dest": "render"
+			"dest": "/404.html",
+			"status": 404
 		}
 	]
 }
