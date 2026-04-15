@@ -111,7 +111,7 @@ export const ChatWidget = () => {
     <>
       {/* FAB */}
       <button
-        className={style.fab}
+        className={`${style.fab} ${open ? style.fabHidden : ""}`}
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Open chat"}
       >

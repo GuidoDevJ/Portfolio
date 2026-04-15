@@ -330,6 +330,13 @@
   height: 18px;
 }
 
+/* ── FAB hidden when panel is open ──────────────────────────── */
+.fabHidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
 /* ── Mobile ─────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .fab {
@@ -342,7 +349,7 @@
     right: 0;
     left: 0;
     width: 100%;
-    height: 72vh;
+    height: 75vh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     transform-origin: bottom center;
   }
