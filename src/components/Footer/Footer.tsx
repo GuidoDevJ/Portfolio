@@ -1,26 +1,26 @@
 import { SocialMedia } from "src/ui/Social-Media/socialMedia";
+import { useLanguage } from "src/context/LanguageContext";
 import styles from "./styles.module.css";
+
 const Footer = () => {
+  const { t } = useLanguage();
+  const currentYear = new Date().getFullYear();
+
   return (
-    <>
-      <footer className={`${styles.footerContainer}`}>
-        <div className={`${styles.mainFooter}`}>
-          <SocialMedia />
-          <div className={`${styles.containerTextFooter}`}>
-            <h2>Guido Gauna</h2>
-            <p>
-              A Frontend focused Web Developer building the Frontend of Websites
-              and Web Applications that leads to the success of the overall
-              product
-            </p>
-          </div>
+    <footer className={styles.footerContainer}>
+      <div className={styles.mainFooter}>
+        <SocialMedia />
+        <div className={styles.containerTextFooter}>
+          <h2>{t.footer.title}</h2>
+          <p>{t.footer.description}</p>
         </div>
-        <hr />
-        <div className={`${styles.mainFooterDown}`}>
-            <span> &#169; Copyright 2024. Do it by GuidoDev</span>
-          </div>
-      </footer>
-    </>
+      </div>
+      <hr />
+      <div className={styles.mainFooterDown}>
+        <span>{t.footer.copyright.replace("{year}", String(currentYear))}</span>
+      </div>
+    </footer>
   );
 };
+
 export { Footer };

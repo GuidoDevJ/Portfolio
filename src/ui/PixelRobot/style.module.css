@@ -1,0 +1,209 @@
+/* ─── Wrapper ─────────────────────────────────────────────────────────── */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.robot {
+  width: clamp(180px, 40vw, 300px);
+  height: auto;
+  overflow: visible;
+  /* Whole robot floats up/down */
+  animation: robotFloat 3.0s ease-in-out infinite alternate;
+}
+
+/* ─── Keyframes ───────────────────────────────────────────────────────── */
+
+/* 1. Full body — gentle float */
+@keyframes robotFloat {
+  from { transform: translateY(0px);  }
+  to   { transform: translateY(-12px); }
+}
+
+/* 2. Head — slow sway left/right */
+@keyframes headSway {
+  0%   { transform: rotate(0deg);   }
+  30%  { transform: rotate(-3deg);  }
+  70%  { transform: rotate(3deg);   }
+  100% { transform: rotate(0deg);   }
+}
+
+/* 3. Antenna — snappy wiggle */
+@keyframes antennaWiggle {
+  0%   { transform: rotate(0deg);   }
+  20%  { transform: rotate(-14deg); }
+  50%  { transform: rotate(10deg);  }
+  80%  { transform: rotate(-8deg);  }
+  100% { transform: rotate(0deg);   }
+}
+
+/* 4. Eye blink — long pause, quick close */
+@keyframes eyeBlink {
+  0%, 88%, 100% { transform: scaleY(1);    opacity: 1;   }
+  92%, 96%      { transform: scaleY(0.08); opacity: 0.6; }
+}
+
+/* 5. Arm left — forward/back swing */
+@keyframes armLeftSwing {
+  0%   { transform: rotate(0deg);   }
+  40%  { transform: rotate(-18deg); }
+  100% { transform: rotate(8deg);   }
+}
+
+/* 6. Arm right — counter-phase swing */
+@keyframes armRightSwing {
+  0%   { transform: rotate(0deg);  }
+  40%  { transform: rotate(16deg); }
+  100% { transform: rotate(-6deg); }
+}
+
+/* 7. Body — micro sway */
+@keyframes bodySway {
+  0%   { transform: rotate(0deg);  }
+  50%  { transform: rotate(-1.5deg); }
+  100% { transform: rotate(1.5deg);  }
+}
+
+/* 8. Chest screen bars — typing effect */
+@keyframes screenBarGrow {
+  0%   { transform: scaleX(0.3); opacity: 0.4; }
+  50%  { transform: scaleX(1.0); opacity: 1;   }
+  100% { transform: scaleX(0.6); opacity: 0.6; }
+}
+
+/* 9. LED pulse — each one blinks independently */
+@keyframes ledPulse {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.2; }
+}
+
+/* 10. Leg left — subtle step */
+@keyframes legLeftStep {
+  0%   { transform: rotate(0deg);  }
+  50%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg);  }
+}
+
+/* 11. Leg right — opposite step */
+@keyframes legRightStep {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* 12. Shadow — synced with float */
+@keyframes shadowPulse {
+  from { transform: scaleX(1);    opacity: 0.18; }
+  to   { transform: scaleX(0.75); opacity: 0.08; }
+}
+
+/* 13. Antenna LED flash */
+@keyframes antennaLedFlash {
+  0%, 100% { opacity: 1;   fill: #facf0f; }
+  40%       { opacity: 0.2; fill: #ff4d4d; }
+  60%       { opacity: 1;   fill: #facf0f; }
+}
+
+/* ─── Apply animations ────────────────────────────────────────────────── */
+
+/* Head: 4.7s — offset from body float (3.0s), they never sync */
+.head {
+  animation: headSway 4.7s ease-in-out infinite;
+}
+
+/* Antenna: 1.6s — fastest, snappy feel */
+.antenna {
+  animation: antennaWiggle 1.6s ease-in-out infinite;
+}
+
+.antennaLed {
+  animation: antennaLedFlash 2.3s ease-in-out infinite;
+}
+
+/* Eyes: different durations + delay so they don't blink together */
+.eyeLeft {
+  animation: eyeBlink 5.2s ease-in-out infinite;
+}
+.eyeRight {
+  animation: eyeBlink 5.2s ease-in-out infinite;
+  animation-delay: -2.6s; /* starts mid-cycle = offset blink */
+}
+
+/* Arms: different durations + opposing directions */
+.armLeft {
+  animation: armLeftSwing 2.8s ease-in-out infinite alternate;
+}
+.armRight {
+  animation: armRightSwing 3.5s ease-in-out infinite alternate;
+}
+
+/* Body: 6.1s — very slow micro sway */
+.body {
+  animation: bodySway 6.1s ease-in-out infinite alternate;
+}
+
+/* Chest screen bars: each on different timing for "data processing" look */
+.screenBar1 {
+  transform-origin: left center;
+  animation: screenBarGrow 1.1s ease-in-out infinite alternate;
+}
+.screenBar2 {
+  transform-origin: left center;
+  animation: screenBarGrow 1.1s ease-in-out infinite alternate;
+  animation-delay: -0.37s;
+}
+.screenBar3 {
+  transform-origin: left center;
+  animation: screenBarGrow 1.1s ease-in-out infinite alternate;
+  animation-delay: -0.74s;
+}
+
+/* LEDs: each at very different rates to feel random */
+.ledGreen  { animation: ledPulse 1.3s ease-in-out infinite; }
+.ledYellow { animation: ledPulse 2.1s ease-in-out infinite; animation-delay: -0.5s; }
+.ledRed    { animation: ledPulse 0.9s ease-in-out infinite; animation-delay: -0.3s; }
+.ledBlue   { animation: ledPulse 1.7s ease-in-out infinite; animation-delay: -0.8s; }
+
+/* Legs: in phase with body float for walking illusion */
+.legLeft {
+  animation: legLeftStep 3.0s ease-in-out infinite;
+}
+.legRight {
+  animation: legRightStep 3.0s ease-in-out infinite;
+  animation-delay: -1.5s; /* opposite phase */
+}
+
+/* Shadow: synced with robot float */
+.shadow {
+  transform-origin: 50px 168px;
+  animation: shadowPulse 3.0s ease-in-out infinite alternate;
+}
+
+/* ─── Reduce motion (accessibility) ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .robot,
+  .head,
+  .antenna,
+  .antennaLed,
+  .eyeLeft,
+  .eyeRight,
+  .armLeft,
+  .armRight,
+  .body,
+  .screenBar1,
+  .screenBar2,
+  .screenBar3,
+  .ledGreen,
+  .ledYellow,
+  .ledRed,
+  .ledBlue,
+  .legLeft,
+  .legRight,
+  .shadow {
+    animation: none;
+  }
+}

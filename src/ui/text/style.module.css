@@ -1,29 +1,31 @@
 .title {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  color: #333;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
 }
 
 .p_primary {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  color: #333;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-primary);
   text-overflow: ellipsis;
   max-width: 700px;
 }
+
 .p_secondary {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
   text-overflow: ellipsis;
   max-width: 700px;
 }
+
 .subtitle {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 28px;
-  font-weight: 900;
-  color: #000;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
 }

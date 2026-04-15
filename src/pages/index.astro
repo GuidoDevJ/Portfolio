@@ -1,31 +1,47 @@
 ---
-import { Title, Text } from "src/ui/text";
-import { Button } from "../ui/Button/Button";
-import { Header } from "src/components/Header/Header";
-import { Hero } from "src/components/Hero/Hero";
-import { Skill } from "src/ui/Skill-Button";
-import { AboutMe } from "src/components/About-Me/About-Me";
-import { Proyect } from "src/components/Proyects/Proyect";
-import { Contact } from "src/components/Contact/Contact";
-import { Footer } from "src/components/Footer/Footer";
+// SEO Component
+import SEO from "src/components/SEO/SEO.astro";
+
+// App Component (with LanguageProvider)
+import { App } from "src/components/App/App";
+
+// GitHub data fetching (build-time)
+import { fetchGitHubProjects } from "src/lib/github";
+import { PROJECTS } from "src/constants/projects";
+
+// LinkedIn data parsing (build-time)
+import { loadLinkedInExperiences } from "src/lib/linkedin";
+import { EXPERIENCES } from "src/constants/experience";
+
+// Styles
 import "../public/css/index.css";
 import "../public/css/hover.css";
+import "../public/css/animations.css";
+
+const githubProjects = await fetchGitHubProjects();
+const projects = githubProjects.length > 0 ? githubProjects : PROJECTS;
+
+const linkedinExperiences = loadLinkedInExperiences();
+const experiences = linkedinExperiences ?? EXPERIENCES;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <SEO />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Source+Sans+Pro:wght@300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -33,44 +49,34 @@ import "../public/css/hover.css";
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>PortFolio</title>
+
+    <!-- Theme & Language Script (prevent flash) -->
+    <script is:inline>
+      // Theme
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+
+      // Language
+      const lang = localStorage.getItem('language') ||
+        (navigator.language.startsWith('es') ? 'es' : 'en');
+      document.documentElement.setAttribute('lang', lang);
+    </script>
   </head>
+
   <body>
-    <header class="header">
-      <Header client:only />
-      <Hero client:only />
-    </header>
-    <main class="main">
-      <AboutMe />
-      <Proyect />
-      <Contact client:only />
-    </main>
-    <Footer />
+    <App client:only="react" projects={projects} experiences={experiences} />
   </body>
 </html>
-<style>
-  html,
-  body {
-    scroll-behavior: smooth;
-    font-family: "Roboto Condensed", sans-serif;
-  }
-  html::-webkit-scrollbar {
-    display: none; /* Ocultar scroll */
-  }
 
+<style>
   .header {
     width: 100%;
     height: auto;
   }
+
   .main {
     width: 100%;
     overflow-x: hidden;
-  }
-
-  @media (min-width: 600px) {
-    .main {
-      width: 100%;
-      margin: 0 auto;
-    }
   }
 </style>

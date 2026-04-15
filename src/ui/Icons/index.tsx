@@ -1,11 +1,17 @@
-import Burger from "../../public/assets/Burger.svg"
-
-const BurgerIcon = ({ action }: any) => {
-    return (
-        <img src={`${Burger.src}`} width={"50px"} alt="burger" onClick={() => action()} />
-    )
+interface BurgerIconProps {
+  action: () => void;
 }
 
-export {
-    BurgerIcon
-}
+const BurgerIcon = ({ action }: BurgerIconProps) => {
+  return (
+    <img
+      src="/assets/Burger.svg"
+      width="50px"
+      alt="Menu"
+      onClick={action}
+      style={{ cursor: "pointer" }}
+    />
+  );
+};
+
+export { BurgerIcon };

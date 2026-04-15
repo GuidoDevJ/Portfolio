@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"c:\\\\Users\\\\guido\\\\Desktop\\\\Personal\\\\Portfolio\\\\src\\\\Hooks\\\\UseWindowDimensions.ts\")",
+      "Bash(del \"c:\\\\Users\\\\guido\\\\Desktop\\\\Personal\\\\Portfolio\\\\src\\\\ui\\\\BottonMedia\\\\index.jsx\")",
+      "Bash(if exist \"node_modules\\\\.vite\" rmdir /s /q \"node_modules\\\\.vite\")",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

@@ -1,25 +1,33 @@
 .container {
   text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-background);
+  transition: background-color var(--transition-normal);
 }
-.container span {
+
+.divider {
+  display: block;
+  position: relative;
   width: 10px;
   height: 2px;
-  background-color: #facf0f;
+  margin: 0 auto;
+  background-color: var(--color-primary);
 }
-.container span::after {
+
+.divider::after {
   content: "";
   position: absolute;
-  top: calc(100% + 6.5rem);
   height: 5px;
   width: 3rem;
-  background: #facf0f;
+  background: var(--color-primary);
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 5px;
+  border-radius: var(--radius-lg);
 }
+
 .text {
-  margin-top: 15px;
-  padding: 15px;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,11 +38,14 @@
   height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0 30px;
-  gap: 15px;
+  padding: 0 var(--spacing-xl);
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .aboutMe h2 {
-  margin-bottom: 25px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .aboutMeText {
@@ -43,51 +54,77 @@
   justify-content: space-between;
   align-items: start;
   height: auto;
+  gap: var(--spacing-md);
 }
+
 .skillContainer {
   width: 100%;
-  padding: 15px;
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .skillContainer h2 {
   width: 100%;
   text-align: left;
 }
+
 .aboutMe p {
   text-align: left;
 }
+
 .aboutMe button {
-  margin-top: 20px;
+  margin-top: var(--spacing-lg);
 }
+
 .skills {
   width: 100%;
   max-width: 550px;
-  height: 50%;
+  height: auto;
   display: flex;
   flex-direction: row;
-  align-items: self-start;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: var(--spacing-md);
 }
 
 .aboutMeText a {
   text-decoration: none;
-  color: black;
+  color: var(--color-text-primary);
 }
+
 @media (max-width: 720px) {
   .aboutMe {
     grid-template-columns: 1fr;
+    padding: 0 var(--spacing-md);
   }
 
   .aboutMeText {
-    padding: 15px;
-    margin-top: 3rem;
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
   }
+
   .aboutMe button {
     align-self: center;
-    height: 60px;
-    width: 120px;
+  }
+
+  .skills {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  .aboutMe {
+    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+  .skillContainer {
+    padding: var(--spacing-md) var(--spacing-sm);
   }
 }

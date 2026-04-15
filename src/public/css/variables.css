@@ -1,0 +1,113 @@
+:root {
+  /* Colors - Light Mode */
+  --color-primary: #facf0f;
+  --color-primary-hover: #e6bc0d;
+  --color-primary-light: rgba(250, 207, 15, 0.2);
+
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-heading: #000000;
+  --color-text-inverse: #ffffff;
+
+  --color-background: #ffffff;
+  --color-background-secondary: #f0f0f0;
+  --color-background-tertiary: #f5f7fa;
+
+  --color-border: #dddddd;
+  --color-border-light: #eeeeee;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, rgb(245, 247, 250) 0%, #c3cfe2 100%);
+  --gradient-blob: linear-gradient(90deg, #a03692, #c0aec5);
+
+  /* Footer */
+  --color-footer-bg: #000000;
+  --color-footer-text: #ffffff;
+
+  /* Skill buttons */
+  --color-skill-bg: #385170;
+  --color-skill-text: #ffffff;
+
+  /* Typography */
+  --font-family-primary: "Source Sans Pro", sans-serif;
+  --font-family-secondary: "Roboto Condensed", sans-serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 36px;
+  --font-size-4xl: 50px;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.2rem;
+  --radius-md: 0.3rem;
+  --radius-lg: 6px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Z-index */
+  --z-dropdown: 50;
+  --z-sticky: 100;
+  --z-fixed: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --color-text-primary: #e5e5e5;
+  --color-text-secondary: #a0a0a0;
+  --color-text-heading: #ffffff;
+  --color-text-inverse: #1a1a2e;
+
+  --color-background: #1a1a2e;
+  --color-background-secondary: #16213e;
+  --color-background-tertiary: #0f3460;
+
+  --color-border: #2d2d44;
+  --color-border-light: #3d3d5c;
+
+  --gradient-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+
+  --color-footer-bg: #0d0d1a;
+  --color-footer-text: #e5e5e5;
+
+  --color-skill-bg: #0f3460;
+  --color-skill-text: #e5e5e5;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+}

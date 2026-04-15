@@ -1,27 +1,32 @@
 .footerContainer {
-  width: 100vw;
-  height: 50vh;
+  width: 100%;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 .mainFooter {
-  width: 84vw;
-  height: 70%;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
 }
 
 .footerContainer hr {
   width: 90%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: var(--spacing-lg);
+  border: none;
+  border-top: 1px solid var(--color-border);
+  opacity: 0.3;
 }
 
 .mainFooterDown {
@@ -32,14 +37,25 @@
 }
 
 .mainFooterDown span {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
+  opacity: 0.8;
 }
 
 .containerTextFooter {
-  height: 20vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: var(--spacing-md);
+}
+
+.containerTextFooter h2 {
+  color: var(--color-footer-text);
+}
+
+.containerTextFooter p {
+  color: var(--color-footer-text);
+  opacity: 0.8;
 }
 
 @media (min-width: 600px) {
@@ -47,7 +63,7 @@
     flex-direction: row-reverse;
   }
   .containerTextFooter {
-    height: 20vh;
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

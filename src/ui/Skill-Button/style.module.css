@@ -1,10 +1,17 @@
-.skill{
-    padding: 12px;
-    margin: 5px;
-    background-color: #385170;
-    border-radius: 5px;
+.skill {
+  padding: 12px 16px;
+  margin: 5px;
+  background-color: var(--color-skill-bg);
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-normal), transform var(--transition-fast);
 }
-.skill p{
-    font-size: 16px;
-    color: #fff;
+
+.skill:hover {
+  transform: translateY(-2px);
+}
+
+.skill p {
+  font-size: var(--font-size-base);
+  color: var(--color-skill-text);
+  font-weight: var(--font-weight-medium);
 }

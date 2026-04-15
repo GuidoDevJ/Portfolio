@@ -1,28 +1,43 @@
 .container {
   text-align: center;
-  background-image: url("../../public/images/fondo-geometrico-moderno-blanco-alto-angulo.jpg");
-  background-attachment: fixed;
-  padding: 1.5rem;
-  margin-top: 1rem;
+  background-color: var(--color-background-tertiary);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  margin-top: var(--spacing-md);
+  transition: background-color var(--transition-normal);
 }
-.container span {
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+  .text {
+    padding: var(--spacing-sm);
+  }
+}
+
+.divider {
+  display: block;
+  position: relative;
   width: 10px;
   height: 2px;
-  background-color: #facf0f;
+  margin: 0 auto;
+  background-color: var(--color-primary);
 }
-.container span::after {
+
+.divider::after {
   content: "";
   position: absolute;
   height: 5px;
   width: 3rem;
-  background: #facf0f;
+  background: var(--color-primary);
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 5px;
+  border-radius: var(--radius-lg);
 }
+
 .text {
-  margin-top: 15px;
-  padding: 15px;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +47,7 @@
 .formContainer {
   width: 100%;
   height: auto;
-  margin-top: 10px;
+  margin-top: var(--spacing-md);
   display: flex;
   justify-content: center;
   align-items: center;

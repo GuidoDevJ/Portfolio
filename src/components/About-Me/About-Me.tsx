@@ -1,64 +1,35 @@
 import { Subtitle, Text, TextSecondary, Title } from "src/ui/text";
-import style from "./style.module.css";
 import { Button } from "src/ui/Button/Button";
 import { Skill } from "src/ui/Skill-Button";
+import { useLanguage } from "src/context/LanguageContext";
+import { SKILLS } from "src/constants";
+import style from "./style.module.css";
+
 const AboutMe = () => {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JAVASCRIPT",
-    "REACT",
-    "NEXTJS",
-    "EXPRESS",
-    "NODE",
-    "GIT",
-    "POSTGRESQL",
-    "FIRABASE",
-    'CI/CD',
-    'AWS',
-    'DOCKER',
-    'NEST',
-    'TESTING',
-    'GRAPHQL',
-    'MICROSERVICES',
-    'SCRUM',
-    'ASTRO',
-    'NEST JS'
-  ];
+  const { t } = useLanguage();
+
   return (
     <div className={style.container} id="About">
-      <Title>About Me</Title>
-      <span></span>
+      <Title>{t.about.title}</Title>
+      <span className={style.divider}></span>
       <div className={style.text}>
-        <Text>
-          Here you will find more information about me, what I do, and my
-          current skills mostly in terms of programming and technology
-        </Text>
+        <Text>{t.about.description}</Text>
       </div>
       <div className={style.aboutMe}>
         <div className={style.aboutMeText}>
-          <Subtitle> A little more</Subtitle>
-          <TextSecondary>
-          I'm a software developer, who is always trying to be a little better everyday, 
-          so I really like watching, listening and reading about technologies and their uses.
-          </TextSecondary>
-          <TextSecondary>
-            I also like sharing content related to the stuff that I have learned
-            over the years in Web Development so it can help other people of the
-            Dev Community. Feel free to Connect or Follow me on my Linkedin
-          </TextSecondary>
-          <TextSecondary>
-            I'm open to Job opportunities where I can contribute, learn and
-            grow. If you have a good opportunity that matches my skills and
-            experience then don't hesitate to contact me.
-          </TextSecondary>
-          <Button><a href="#Contact">Contact</a></Button>
+          <Subtitle>{t.about.subtitle}</Subtitle>
+          <TextSecondary>{t.about.text1}</TextSecondary>
+          <TextSecondary>{t.about.text2}</TextSecondary>
+          <TextSecondary>{t.about.text3}</TextSecondary>
+          <Button>
+            <a href="#Contact">{t.about.contactBtn}</a>
+          </Button>
         </div>
         <div className={style.skillContainer}>
-          <Subtitle>My Skills</Subtitle>
+          <Subtitle>{t.about.skillsTitle}</Subtitle>
           <div className={style.skills}>
-            {skills.map((skill) => (
-              <Skill skill={skill} />
+            {SKILLS.map((skill) => (
+              <Skill key={skill} skill={skill} />
             ))}
           </div>
         </div>

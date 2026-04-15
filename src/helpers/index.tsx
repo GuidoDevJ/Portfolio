@@ -1,24 +1,18 @@
-interface Email{
-    message : string;
-    email:string;
-    name:string;
-}
-const sendEmail = async (email:Email)=>{
-    console.log("email",email)
-    try {
-        const res = await fetch('https://g-notifications.onrender.com/message',{
-            method:'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(email)
-        })
-        const data = await res.json(); 
-        return data;
-    } catch (error) {
-        console.log(error)
-    }
-
+export interface EmailPayload {
+  name: string;
+  email: string;
+  message: string;
 }
 
-export {sendEmail}
+export async function sendEmail(payload: EmailPayload): Promise<void> {
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data?.error ?? `Request failed: ${res.status}`);
+  }
+}

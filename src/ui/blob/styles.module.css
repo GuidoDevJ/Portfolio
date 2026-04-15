@@ -1,15 +1,41 @@
 .container .animated_blob_image {
   border-radius: 23% 31% 30% 67% / 72% 47% 40% 26%;
-  width: 250px;
-  height: 220px;
-  background: linear-gradient(#a03692, #b46ca8, #c0aec5);
+  width: clamp(160px, 35vw, 280px);
+  height: clamp(140px, 30vw, 250px);
+  background: linear-gradient(135deg, var(--color-primary), #a03692, #c0aec5);
   overflow: hidden;
   animation: animateImg 8s linear infinite;
 }
+
+@media (max-width: 480px) {
+  .container .animated_blob_image {
+    width: 160px;
+    height: 140px;
+  }
+}
+
 .container img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.placeholder span {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 @keyframes animateImg {
   0%,
   100% {

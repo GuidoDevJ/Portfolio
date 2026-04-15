@@ -1,8 +1,29 @@
-.link{
-    text-decoration: none;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 24px;
-    font-weight: 900;
-    color: #333;
-    padding: 5px;
+.link {
+  text-decoration: none;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  padding: var(--spacing-sm);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.active {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: var(--color-primary);
 }

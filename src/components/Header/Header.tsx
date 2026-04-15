@@ -1,19 +1,25 @@
-// Components
-import { List } from "../List/index"
-// UI
-import Logo from "../../public/assets/Logo.svg"
-// Style
-import style from "./style.module.css"
+import { List } from "../List/index";
+import { ThemeToggle } from "src/ui/ThemeToggle";
+import { LanguageToggle } from "src/ui/LanguageToggle";
+import style from "./style.module.css";
+
 const Header = () => {
   return (
-    <div className={style.container}>
+    <nav className={style.container}>
       <div className={style.containerImg}>
-        <img src={`${Logo}`} alt="" className="hvr-buzz-out" />
+        <a href="#Home" aria-label="Go to home">
+          <img src="/assets/Logo.svg" alt="Logo" className="hvr-buzz-out" />
+        </a>
       </div>
-      <List />
-    </div>
-  )
-}
+      <div className={style.navContainer}>
+        <List />
+        <div className={style.toggles}>
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-
-export { Header }
+export { Header };

@@ -1,0 +1,73 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  type?: "website" | "article";
+  keywords?: string;
+}
+
+const {
+  title = "Guido Gauna | Software Developer",
+  description = "Software Developer focused on building well-performing Web Applications with React, Node.js, TypeScript, and modern technologies. Available for new opportunities.",
+  image = "/assets/og-image.png",
+  url = Astro.url.href,
+  type = "website",
+  keywords = "software developer, web developer, react, nodejs, javascript, typescript, full stack developer, frontend developer, backend developer"
+} = Astro.props;
+
+const siteUrl = Astro.site?.href || "";
+const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Guido Gauna" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="English" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImageUrl} />
+<meta property="og:site_name" content="Guido Gauna Portfolio" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImageUrl} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={url} />
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Guido Gauna",
+  "url": siteUrl,
+  "jobTitle": "Software Developer",
+  "description": description,
+  "sameAs": [
+    "https://www.linkedin.com/in/guidogauna",
+    "https://github.com/GuidoDevJ"
+  ],
+  "knowsAbout": [
+    "React",
+    "Node.js",
+    "TypeScript",
+    "JavaScript",
+    "PostgreSQL",
+    "AWS",
+    "Docker"
+  ]
+})} />
