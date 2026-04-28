@@ -22,8 +22,11 @@ export class PortfolioStack extends cdk.Stack {
 
     // ── Lambdas ────────────────────────────────────────────────────────────
 
+    const lockFile = path.resolve(__dirname, '../../infra/package-lock.json');
+
     const contactFn = new NodejsFunction(this, 'ContactFunction', {
       entry: path.resolve(__dirname, '../lambdas/contact/index.ts'),
+      depsLockFilePath: lockFile,
       runtime: lambda.Runtime.NODEJS_20_X,
       timeout: cdk.Duration.seconds(30),
       environment: {
@@ -34,6 +37,7 @@ export class PortfolioStack extends cdk.Stack {
 
     const chatFn = new NodejsFunction(this, 'ChatFunction', {
       entry: path.resolve(__dirname, '../lambdas/chat/index.ts'),
+      depsLockFilePath: lockFile,
       runtime: lambda.Runtime.NODEJS_20_X,
       timeout: cdk.Duration.seconds(30),
       environment: {
