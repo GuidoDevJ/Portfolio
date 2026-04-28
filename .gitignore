@@ -2,6 +2,9 @@
 dist/
 .vercel/
 
+# CDK
+infra/cdk.out/
+
 # generated types
 .astro/
 
@@ -22,3 +25,4 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 CLAUDE.md
+.claude

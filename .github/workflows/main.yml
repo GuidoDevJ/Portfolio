@@ -1,18 +1,48 @@
-name: Push to netlify
+name: Deploy to AWS
+
 on:
   push:
+    branches: [main]
     paths-ignore:
       - ".github/**"
+
+# Required for GitHub to request an OIDC token (no static AWS credentials needed)
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Build
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+
+      - name: Install & build
         run: |
-          yarn
+          yarn install --frozen-lockfile
           yarn build
-          npx netlify-cli deploy --dir=dist --prod
+
+      - name: Install CDK dependencies
+        working-directory: infra
+        run: npm install
+
+      - name: Configure AWS credentials (OIDC — no static keys)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: CDK deploy
+        working-directory: infra
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          CHAT_API_URL: ${{ secrets.CHAT_API_URL }}
+          CHAT_API_KEY: ${{ secrets.CHAT_API_KEY }}
+        run: npx cdk deploy PortfolioStack --require-approval never
