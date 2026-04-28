@@ -22,7 +22,8 @@ export class PortfolioStack extends cdk.Stack {
 
     // ── Lambdas ────────────────────────────────────────────────────────────
 
-    const lockFile = path.resolve(__dirname, '../../infra/package-lock.json');
+    // Point to root yarn.lock so esbuild resolves deps (e.g. resend) from root node_modules/
+    const lockFile = path.resolve(__dirname, '../../yarn.lock');
 
     const contactFn = new NodejsFunction(this, 'ContactFunction', {
       entry: path.resolve(__dirname, '../lambdas/contact/index.ts'),
