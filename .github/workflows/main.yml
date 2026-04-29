@@ -23,14 +23,14 @@ jobs:
           node-version: "20"
           cache: "yarn"
 
+      - name: Install CDK dependencies
+        working-directory: infra
+        run: npm install
+
       - name: Install & build
         run: |
           yarn install --frozen-lockfile
           yarn build
-
-      - name: Install CDK dependencies
-        working-directory: infra
-        run: npm install
 
       - name: Configure AWS credentials (OIDC — no static keys)
         uses: aws-actions/configure-aws-credentials@v4
