@@ -4,6 +4,7 @@ dist/
 
 # CDK
 infra/cdk.out/
+infra/package-lock.json
 
 # generated types
 .astro/
