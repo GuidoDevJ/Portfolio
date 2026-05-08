@@ -5,8 +5,8 @@ import SEO from "src/components/SEO/SEO.astro";
 // App Component (with LanguageProvider)
 import { App } from "src/components/App/App";
 
-// GitHub data fetching (build-time)
-import { fetchGitHubProjects } from "src/lib/github";
+// Contentful data fetching (build-time)
+import { fetchContentfulProjects } from "src/lib/contentful";
 import { PROJECTS } from "src/constants/projects";
 
 // LinkedIn data parsing (build-time)
@@ -18,8 +18,8 @@ import "../public/css/index.css";
 import "../public/css/hover.css";
 import "../public/css/animations.css";
 
-const githubProjects = await fetchGitHubProjects();
-const projects = githubProjects.length > 0 ? githubProjects : PROJECTS;
+const contentfulProjects = await fetchContentfulProjects();
+const projects = contentfulProjects.length > 0 ? contentfulProjects : PROJECTS;
 
 const linkedinExperiences = loadLinkedInExperiences();
 const experiences = linkedinExperiences ?? EXPERIENCES;

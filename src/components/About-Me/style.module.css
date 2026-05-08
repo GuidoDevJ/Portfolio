@@ -1,8 +1,14 @@
 .container {
-  text-align: center;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-2xl) var(--spacing-md);
   background-color: var(--color-background);
   transition: background-color var(--transition-normal);
+}
+
+/* ── Header ───────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
 }
 
 .divider {
@@ -25,106 +31,134 @@
   border-radius: var(--radius-lg);
 }
 
-.text {
+.headerText {
   margin-top: var(--spacing-lg);
-  padding: var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.aboutMe {
-  height: auto;
+/* ── Two-column content ───────────────────────────────── */
+
+.content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0 var(--spacing-xl);
-  gap: var(--spacing-lg);
-  max-width: 1200px;
+  grid-template-columns: 1fr 380px;
+  gap: var(--spacing-2xl);
+  max-width: 1100px;
   margin: 0 auto;
-}
-
-.aboutMe h2 {
-  margin-bottom: var(--spacing-xl);
-}
-
-.aboutMeText {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: start;
-  height: auto;
-  gap: var(--spacing-md);
+  padding: 0 var(--spacing-xl);
 }
 
-.skillContainer {
-  width: 100%;
-  padding: var(--spacing-lg);
+/* ── Bio (left) ───────────────────────────────────────── */
+
+.bio {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.skillContainer h2 {
-  width: 100%;
-  text-align: left;
-}
-
-.aboutMe p {
-  text-align: left;
-}
-
-.aboutMe button {
-  margin-top: var(--spacing-lg);
-}
-
-.skills {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
+  gap: var(--spacing-lg);
   align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: var(--spacing-md);
 }
 
-.aboutMeText a {
+.bioText {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  text-align: left;
+}
+
+.bio a {
   text-decoration: none;
   color: var(--color-text-primary);
 }
 
-@media (max-width: 720px) {
-  .aboutMe {
+/* ── Highlights card (right) ──────────────────────────── */
+
+.card {
+  background-color: var(--color-background-secondary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  position: sticky;
+  top: 100px;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+  margin: 0 0 var(--spacing-lg) 0;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-background);
+  transition: background-color var(--transition-fast);
+}
+
+.highlightItem:hover {
+  background-color: var(--color-primary-light);
+}
+
+.checkIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .content {
     grid-template-columns: 1fr;
     padding: 0 var(--spacing-md);
   }
 
-  .aboutMeText {
-    padding: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+  .card {
+    position: static;
   }
 
-  .aboutMe button {
-    align-self: center;
+  .bio {
+    align-items: center;
+    text-align: center;
   }
 
-  .skills {
-    max-width: 100%;
-    justify-content: flex-start;
+  .bioText {
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: var(--spacing-lg) var(--spacing-sm);
+    padding: var(--spacing-xl) var(--spacing-sm);
   }
-  .aboutMe {
+
+  .content {
     padding: 0 var(--spacing-sm);
-    gap: var(--spacing-md);
+    gap: var(--spacing-xl);
   }
-  .skillContainer {
-    padding: var(--spacing-md) var(--spacing-sm);
+
+  .bioText {
+    font-size: var(--font-size-base);
   }
 }
