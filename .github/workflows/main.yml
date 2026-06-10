@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths-ignore:
       - ".github/**"
+  workflow_dispatch:
 
 # Required for GitHub to request an OIDC token (no static AWS credentials needed)
 permissions:
