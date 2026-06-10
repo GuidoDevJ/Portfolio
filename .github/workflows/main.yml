@@ -42,6 +42,10 @@ jobs:
           role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
           aws-region: us-east-1
 
+      - name: CDK bootstrap
+        working-directory: infra
+        run: npx cdk bootstrap
+
       - name: CDK deploy
         working-directory: infra
         env:
