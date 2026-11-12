@@ -148,6 +148,9 @@ export const es: Translations = {
       'Un Desarrollador de Software construyendo Aplicaciones Web que llevan al éxito.',
     social: 'Redes',
     copyright: '© {year} Guido Gauna. Todos los derechos reservados.',
+    privacy: 'Política de privacidad',
+    terms: 'Términos del servicio',
+    dataDeletion: 'Eliminación de datos',
   },
 
   // Página 404

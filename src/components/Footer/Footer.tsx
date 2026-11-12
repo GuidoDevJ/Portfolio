@@ -18,6 +18,11 @@ const Footer = () => {
       <hr />
       <div className={styles.mainFooterDown}>
         <span>{t.footer.copyright.replace("{year}", String(currentYear))}</span>
+        <nav className={styles.legalLinks}>
+          <a href="/privacy-policy">{t.footer.privacy}</a>
+          <a href="/terms">{t.footer.terms}</a>
+          <a href="/data-deletion">{t.footer.dataDeletion}</a>
+        </nav>
       </div>
     </footer>
   );

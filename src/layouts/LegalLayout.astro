@@ -1,0 +1,98 @@
+---
+import SEO from "../components/SEO/SEO.astro";
+import "../public/css/index.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO title={`${title} | Guido Gauna`} description={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      const theme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+      const lang =
+        localStorage.getItem("language") ||
+        (navigator.language.startsWith("es") ? "es" : "en");
+      document.documentElement.setAttribute("lang", lang);
+    </script>
+    <style>
+      .legal {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+      }
+      .legal h1 {
+        font-size: var(--font-size-2xl);
+        color: var(--color-text-heading);
+        margin-bottom: var(--spacing-sm);
+      }
+      .legal h2 {
+        font-size: var(--font-size-xl);
+        color: var(--color-text-heading);
+        margin: var(--spacing-xl) 0 var(--spacing-sm);
+      }
+      .legal p,
+      .legal li {
+        color: var(--color-text-secondary);
+        margin-bottom: var(--spacing-sm);
+      }
+      .legal ul {
+        padding-left: var(--spacing-lg);
+      }
+      .legal a {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+      .legal-nav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+      }
+      .legal-footer {
+        margin-top: var(--spacing-xl);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--color-border);
+        display: flex;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+      }
+      html[lang="es"] [data-lang="en"],
+      html:not([lang="es"]) [data-lang="es"] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="legal">
+      <nav class="legal-nav">
+        <a href="/">← <span data-lang="en">Back to Home</span><span data-lang="es">Volver al inicio</span></a>
+      </nav>
+      <slot />
+      <footer class="legal-footer">
+        <a href="/privacy-policy"><span data-lang="en">Privacy Policy</span><span data-lang="es">Política de privacidad</span></a>
+        <a href="/terms"><span data-lang="en">Terms of Service</span><span data-lang="es">Términos del servicio</span></a>
+        <a href="/data-deletion"><span data-lang="en">Data Deletion</span><span data-lang="es">Eliminación de datos</span></a>
+      </footer>
+    </main>
+  </body>
+</html>

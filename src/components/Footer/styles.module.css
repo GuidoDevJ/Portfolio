@@ -69,3 +69,14 @@
     justify-content: space-evenly;
   }
 }
+
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.legalLinks a {
+  text-decoration: underline;
+}

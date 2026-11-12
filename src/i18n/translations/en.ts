@@ -147,6 +147,9 @@ export const en = {
       'A Software Developer building Web Applications that leads to success.',
     social: 'Social',
     copyright: '© {year} Guido Gauna. All rights reserved.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service',
+    dataDeletion: 'Data Deletion',
   },
 
   // 404 Page
