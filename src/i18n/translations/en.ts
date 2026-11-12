@@ -6,6 +6,7 @@ export const en = {
     projects: 'Projects',
     experience: 'Experience',
     contact: 'Contact',
+    blog: 'Blog',
   },
 
   // Hero Section

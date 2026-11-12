@@ -1,20 +1,26 @@
+import type { ReactNode } from "react";
 import style from "./style.module.css";
-// import styled from "styled-components";
+
 interface ButtonProps {
-  children: any;
-  fn: ()=>any;
+  children: ReactNode;
+  href?: string;
+  onClick?: () => void;
 }
 
-function Button({ children, fn }: any) {
-  const handleClick=()=>{
-    fn()
+const Button = ({ children, href, onClick }: ButtonProps) => {
+  if (href) {
+    return (
+      <a className={style.button} href={href}>
+        {children}
+      </a>
+    );
   }
+
   return (
-    <button className={style.button} onClick={handleClick}>
+    <button className={style.button} onClick={onClick}>
       {children}
     </button>
   );
-}
-
+};
 
 export { Button };

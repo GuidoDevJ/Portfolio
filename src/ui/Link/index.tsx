@@ -6,7 +6,7 @@ interface LinkerProps {
 }
 
 function Linker({ text, href }: LinkerProps) {
-  const linkHref = href ? `#${href}` : `#${text}`;
+  const linkHref = href?.startsWith("/") ? href : href ? `#${href}` : `#${text}`;
 
   return (
     <a

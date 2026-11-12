@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "src/layouts/BlogLayout.astro";
+
+const all = await getCollection("blog", ({ data }) => !data.draft);
+
+// Translations are shown next to their original, not as separate list items.
+const posts = all
+  .filter((post) => !post.data.translationOf)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .map((post) => ({
+    post,
+    translation: all.find((p) => p.data.translationOf === post.slug),
+  }));
+
+const formatDate = (date: Date, locale: string) =>
+  date.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BlogLayout
+  title="Blog | Guido Gauna"
+  description="Notes on web development, tooling and lessons learned."
+>
+  <div class="bilingual">
+    <a class="blog-back" href="/" data-lang="en">&larr; Back to portfolio</a>
+    <a class="blog-back" href="/" data-lang="es">&larr; Volver al portfolio</a>
+  </div>
+  <h1 class="blog-title">Blog</h1>
+
+  {
+    posts.length === 0 && (
+      <div class="bilingual">
+        <p data-lang="en">No posts yet.</p>
+        <p data-lang="es">Todavía no hay posts.</p>
+      </div>
+    )
+  }
+  <ul class="post-list">
+      {
+        posts.map(({ post, translation }) => (
+          <li class:list={["post-item", { bilingual: !!translation }]}>
+            <time datetime={post.data.pubDate.toISOString()}>
+              <span data-lang="en">{formatDate(post.data.pubDate, "en-US")}</span>
+              <span data-lang="es">{formatDate(post.data.pubDate, "es-AR")}</span>
+            </time>
+            <h2>
+              <a href={`/blog/${post.slug}`} data-lang="en">{post.data.title}</a>
+              {translation && (
+                <a href={`/blog/${post.slug}`} data-lang="es">{translation.data.title}</a>
+              )}
+            </h2>
+            <p data-lang="en">{post.data.description}</p>
+            {translation && <p data-lang="es">{translation.data.description}</p>}
+            {post.data.tags.length > 0 && (
+              <ul class="tags">
+                {post.data.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+  </ul>
+</BlogLayout>
+
+<style>
+  .blog-title {
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--spacing-xl);
+  }
+  .post-list, .tags { list-style: none; padding: 0; margin: 0; }
+  .post-item {
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .post-item h2 { margin: var(--spacing-xs) 0; font-size: var(--font-size-2xl); }
+  .post-item time, .post-item p { color: var(--color-text-secondary); }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); }
+  .tags li {
+    font-size: var(--font-size-sm);
+    padding: 0 var(--spacing-sm);
+    border-radius: var(--radius-full);
+    background: var(--color-primary-light);
+    color: var(--color-text-primary);
+  }
+</style>

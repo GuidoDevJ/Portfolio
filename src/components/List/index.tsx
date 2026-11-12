@@ -16,6 +16,7 @@ const List = () => {
     { key: "projects", label: t.nav.projects, href: "Projects" },
     { key: "experience", label: t.nav.experience, href: "Experience" },
     { key: "contact", label: t.nav.contact, href: "Contact" },
+    { key: "blog", label: t.nav.blog, href: "/blog" },
   ];
 
   return (

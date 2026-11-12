@@ -14,9 +14,7 @@ const Hero = () => {
         <div className={style.text}>
           <Title>{t.hero.greeting}</Title>
           <Text>{t.hero.subtitle}</Text>
-          <Button>
-            <a href="#Contact">{t.hero.cta}</a>
-          </Button>
+          <Button href="#Contact">{t.hero.cta}</Button>
         </div>
         <div className={style.blobContainer}>
           <PixelRobot />

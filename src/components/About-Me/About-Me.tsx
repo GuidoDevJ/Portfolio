@@ -38,9 +38,7 @@ const AboutMe = () => {
           <p className={style.bioText}>{t.about.text1}</p>
           <p className={style.bioText}>{t.about.text2}</p>
           <p className={style.bioText}>{t.about.text3}</p>
-          <Button>
-            <a href="#Contact">{t.about.contactBtn}</a>
-          </Button>
+          <Button href="#Contact">{t.about.contactBtn}</Button>
         </div>
 
         <div className={style.card}>

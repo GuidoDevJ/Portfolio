@@ -27,3 +27,5 @@ pnpm-debug.log*
 .DS_Store
 CLAUDE.md
 .claude
+.codegraph
+.atl/

@@ -1,4 +1,7 @@
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 160px;
   width: auto;
   padding: 0 var(--spacing-xl);
@@ -8,6 +11,7 @@
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-inverse);
+  text-decoration: none;
   border: none;
   border-radius: var(--radius-lg);
   cursor: pointer;
@@ -38,14 +42,4 @@
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
-}
-
-.button a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
 }

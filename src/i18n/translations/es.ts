@@ -8,6 +8,7 @@ export const es: Translations = {
     projects: 'Proyectos',
     experience: 'Experiencia',
     contact: 'Contacto',
+    blog: 'Blog',
   },
 
   // Sección Hero
